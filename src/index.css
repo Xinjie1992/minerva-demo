@@ -1,0 +1,43 @@
+
+html, body, #root {
+  height: 100%;
+}
+.wrapper {
+  width: 500px;
+  margin: 10px auto;
+  font-size: 14px;
+  background-color: #fff;
+  border: 1px solid #f1f1f1;
+  padding: 20px;
+}
+.Input_div{
+  margin:10px 0px;
+}
+.username{
+  color:cornflowerblue;
+  font-style: italic;
+  font-size: 16px;
+}
+.content{
+  color:wheat;
+  font-size: 14px;
+}
+.ant-divider-horizontal{
+  margin: 10px 0 !important;
+}
+.comment-createdtime{
+  font-size: 11px;
+  float: right;
+}
+.content{
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 35px;
+}
+hr{
+  width: 95%;
+}
+TextArea{
+  width:50% !important;
+  margin: 0 auto;
+}
