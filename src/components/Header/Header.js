@@ -19,7 +19,7 @@ class Header extends Component {
     };
 
     componentWillMount(){
-        const key = window.location.pathname.replace("/","")||"home";
+        const key = window.location.pathname.split("/")[1]||"home";
         this.setState({
             current:key,
         });

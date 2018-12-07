@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
-import { Input,Modal,Button,message } from 'antd';
+import {Input, Modal, message, Icon,Tooltip} from 'antd';
 import { addApp } from '../../services/addApp';
 
-class Model extends Component{
+class ModelApp extends Component{
 
-    state = { visible: false,appName:'' }
+    constructor(){
+        super();
+        this.state={
+            visible: false,
+            appName:''
+        };
+    }
 
     showModal = () => {
         this.setState({
@@ -22,8 +28,15 @@ class Model extends Component{
                 this.setState({
                     visible: false,
                 });
+                if(this.props.onAddApp){
+                    const newApp = {
+                        "key":resp.data.data.message.id,
+                        "id":resp.data.data.message.id,
+                        "appName":resp.data.data.message.app_name
+                    };
+                    this.props.onAddApp(newApp)
+                }
                 return message.success('新增应用成功！');
-
             }
         })
     }
@@ -43,9 +56,11 @@ class Model extends Component{
     render(){
         return(
             <div>
-                <Button type="dashed" onClick={this.showModal}>
-                    添加应用
-                </Button>
+                <p>应用列表：
+                <Tooltip title="新增应用">
+                    <Icon type="plus-square" theme="twoTone" onClick={this.showModal} style={{cursor:'pointer'}}/>
+                </Tooltip>
+                </p>
                 <Modal
                     title="新增应用"
                     visible={this.state.visible}
@@ -59,4 +74,4 @@ class Model extends Component{
         )
     }
 }
-export default Model
+export default ModelApp
