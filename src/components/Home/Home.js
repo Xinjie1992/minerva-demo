@@ -68,6 +68,7 @@ class Home extends Component{
                     "latest": 'London No. 1 Lake Park'
                 };
                 data_list.push(data)
+                return data_list
             });
             return data_list
         }).then((data_list)=>{
@@ -92,6 +93,7 @@ class Home extends Component{
                     "latest": 'London No. 1 Lake Park'
                 };
                 data_list.push(data)
+                return data_list
             });
             return data_list
         }).then((data_list)=>{
